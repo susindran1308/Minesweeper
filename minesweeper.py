@@ -120,7 +120,6 @@ def reveal(row, col):
             
     elif 1<=data[row][col]<=8:
         play[row][col] = data[row][col]
-        return
 
 
 
@@ -133,9 +132,12 @@ def askUser():
             for j in range(DIMENSION):
                 if data[i][j] == 9:
                     prRed('*')
-                else:
+                elif play[i][j] == '◾':
                     prCyan(play[i][j])
+                else:
+                    prGreen(play[i][j])
             print()
+        prRed('GAME OVER! BETTER LUCK NEXT TIME')
         return False
     else:
         reveal(row, col)
