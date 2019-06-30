@@ -9,8 +9,8 @@ play = [['◾' for i in range(DIMENSION)] for j in range(DIMENSION)]
 def updateMines():
     i=0
     while i < DIMENSION:
-        row = random.randint(0,6)
-        col = random.randint(0,6)
+        row = random.randint(0,DIMENSION-1)
+        col = random.randint(0,DIMENSION-1)
 
         if data[row][col] != 9:
             data[row][col] = 9
