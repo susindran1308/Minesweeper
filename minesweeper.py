@@ -60,56 +60,65 @@ def display():
 
 def reveal(row, col):
     if data[row][col] == 0:
+        data[row][col] = -1
         play[row][col] = '*'
         if row > 0 and col > 0: #top left
-            if data[row-1][col-1] == 0:
-                reveal(row-1, col-1)
-            # elif data[row-1][col-1] != 9:
+            reveal(row-1, col-1)
+            # if data[row-1][col-1] == 0:
+            #     reveal(row-1, col-1)
+            # elif 1<=data[row-1][col-1]<=8:
             #     play[row-1][col-1] = data[row-1][col-1]
 
         if row > 0  and col < DIMENSION-1: #top right
-            if data[row-1][col+1] == 0:
-                reveal(row-1, col+1)
-            # elif data[row-1][col+1] != 9:
+            reveal(row-1, col+1)
+            # if data[row-1][col+1] == 0:
+            #     reveal(row-1, col+1)
+            # elif 1<=data[row-1][col+1]<=8:
             #     play[row-1][col+1] = data[row-1][col+1]
 
         if row > 0: #top
-            if data[row-1][col] == 0:
-                reveal(row-1, col)
-            # elif data[row-1][col] != 9:
+            reveal(row-1, col)
+            # if data[row-1][col] == 0:
+            #     reveal(row-1, col)
+            # elif 1<=data[row-1][col]<=8:
             #     play[row-1][col] = data[row-1][col]
 
         if col > 0: #left
-            if data[row][col-1] == 0:
-                reveal(row, col-1)
-            # elif data[row][col-1] != 9:
+            reveal(row, col-1)
+            # if data[row][col-1] == 0:
+            #     reveal(row, col-1)
+            # elif 1<=data[row][col-1]<=8:
             #     play[row][col-1] = data[row][col-1]
 
         if col < DIMENSION-1: #right
-            if data[row][col+1] == 0:
-                reveal(row, col+1)
-            # elif data[row][col+1] != 9:
+            reveal(row, col+1)
+            # if data[row][col+1] == 0:
+            #     reveal(row, col+1)
+            # elif 1<=data[row][col+1]<=8:
             #     play[row][col+1] = data[row][col+1]
 
         if row < DIMENSION-1: #down
-            if data[row+1][col] == 0:
-                reveal(row+1, col)
-            # elif data[row+1][col] != 9:
+            reveal(row+1, col)
+            # if data[row+1][col] == 0:
+            #     reveal(row+1, col)
+            # elif 1<=data[row+1][col]<=8:
             #     play[row+1][col] = data[row+1][col]
 
         if row < DIMENSION-1 and col > 0: #down left
-            if data[row+1][col-1] == 0:
-                reveal(row+1, col-1)
-            # elif data[row+1][col-1] != 9:
+            reveal(row+1, col-1)
+            # if data[row+1][col-1] == 0:
+            #     reveal(row+1, col-1)
+            # elif 1<=data[row+1][col-1]<=8:
             #     play[row+1][col-1] = data[row+1][col-1]
 
         if row < DIMENSION-1 and col < DIMENSION-1: #down left
-            if data[row+1][col+1] == 0:
-                reveal(row+1, col+1)
-            # elif data[row+1][col+1] != 9:
+            reveal(row+1, col+1)
+            # if data[row+1][col+1] == 0:
+            #     reveal(row+1, col+1)
+            # elif 1<=data[row+1][col+1]<=8:
             #     play[row+1][col+1] = data[row+1][col+1]
             
-    elif data[row][col] != 9:
+    elif 1<=data[row][col]<=8:
         play[row][col] = data[row][col]
         return
 
